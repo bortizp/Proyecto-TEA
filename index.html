@@ -25,6 +25,8 @@
   </nav>
 
   <main>
+    <!-- ... (todas las otras secciones se mantienen igual) ... -->
+
     <section id="que-es" class="fade-in">
       <h2>¿Qué es el TEA?</h2>
       <p>
@@ -116,13 +118,15 @@
 
     <section id="contacto" class="fade-in">
       <h2>Contáctanos</h2>
-      <form id="contact-form">
+      <!-- INICIO DEL CAMBIO: Reemplaza tu <form> con este código -->
+      <form id="contact-form" action="https://formspree.io/f/xyzjrjvp" method="POST">
         <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required />
         <input type="email" id="email" name="email" placeholder="Tu Correo Electrónico" required />
         <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
         <button type="submit">Enviar Mensaje</button>
         <div id="form-status" style="margin-top: 15px; text-align: center; font-weight: 600;"></div>
       </form>
+      <!-- FIN DEL CAMBIO -->
     </section>
   </main>
   
