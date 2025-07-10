@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trastorno del Espectro Autista (TEA) - Página Interactiva</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Descubriendo el Espectro Autista (TEA)</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#que-es">¿Qué es?</a></li>
+      <li><a href="#sintomas">Síntomas</a></li>
+      <li><a href="#mitos">Mitos y Realidades</a></li>
+      <li><a href="#recursos">Recursos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="que-es" class="fade-in">
+      <h2>¿Qué es el TEA?</h2>
+      <p>
+        El Trastorno del Espectro Autista (TEA) es una condición del neurodesarrollo que influye en la comunicación, la interacción social y el comportamiento. Se le llama "espectro" porque sus características varían enormemente de una persona a otra.
+      </p>
+    </section>
+
+    <section id="causas" class="fade-in">
+      <h2>¿Cuáles son sus causas?</h2>
+      <p>
+        Aunque no hay una causa única, la ciencia apunta a una compleja combinación de <strong>factores genéticos y ambientales</strong>. Múltiples genes parecen influir en el desarrollo del cerebro, y ciertos factores durante el embarazo podrían tener un rol.
+      </p>
+      <p class="importante">
+        Es crucial destacar que <strong>no existe ninguna evidencia científica</strong> que vincule el autismo con las vacunas. Esta idea ha sido desmentida por numerosos estudios a nivel mundial.
+      </p>
+    </section>
+
+    <section id="diagnostico" class="fade-in">
+      <h2>¿Cómo se diagnostica?</h2>
+      <p>
+        El diagnóstico se basa en la observación del comportamiento y desarrollo. Profesionales especializados utilizan herramientas estandarizadas para evaluar las habilidades sociales y de comunicación. Un diagnóstico temprano es clave para ofrecer los apoyos necesarios y mejorar la calidad de vida.
+      </p>
+    </section>
+
+    <section id="sintomas" class="fade-in">
+      <h2>Características Comunes</h2>
+      <ul>
+        <li>Patrones de comunicación verbal y no verbal distintos.</li>
+        <li>Intereses profundos y específicos en ciertos temas.</li>
+        <li>Comportamientos repetitivos que les ayudan a autorregularse.</li>
+        <li>Sensibilidad particular a estímulos como sonidos, luces o texturas.</li>
+      </ul>
+    </section>
+
+    <section id="mitos" class="fade-in">
+      <h2>Mitos y Realidades</h2>
+      <div class="mitos-container">
+        <div class="mito-card">
+          <div class="mito-card-inner">
+            <div class="mito-card-front">
+              <h3>Mito: Las vacunas causan autismo.</h3>
+            </div>
+            <div class="mito-card-back">
+              <h3>Realidad</h3>
+              <p>Estudios científicos exhaustivos han demostrado que no existe ninguna relación.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mito-card">
+          <div class="mito-card-inner">
+            <div class="mito-card-front">
+              <h3>Mito: Las personas con TEA no sienten empatía.</h3>
+            </div>
+            <div class="mito-card-back">
+              <h3>Realidad</h3>
+              <p>Sienten emociones profundamente, pero pueden expresarlas y procesarlas de manera diferente.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mito-card">
+          <div class="mito-card-inner">
+            <div class="mito-card-front">
+              <h3>Mito: El autismo es una enfermedad que se puede curar.</h3>
+            </div>
+            <div class="mito-card-back">
+              <h3>Realidad</h3>
+              <p>Es una condición del neurodesarrollo, no una enfermedad. Los apoyos adecuados mejoran la calidad de vida.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos" class="fade-in">
+        <h2>Recursos para Aprender Más</h2>
+        <p>Explora estos videos y enlaces para profundizar tu conocimiento:</p>
+        
+        <div class="videos-container">
+            <iframe src="https://www.youtube.com/embed/m-8A8emGzss" title="¿Qué es el autismo? - Fundación Autismo Diario" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/msW4e-qnFjk" title="TEA explicado de forma sencilla" allowfullscreen></iframe>
+        </div>
+
+        <ul class="recursos-lista">
+            <li><a href="https://www.autismo.org.es/" target="_blank">Confederación Autismo España</a></li>
+            <li><a href="https://fsenderos.cl/" target="_blank">Fsenderos - Sociedad Inclusiva</a></li>
+            <li><a href="https://medlineplus.gov/spanish/ency/article/001526.htm" target="_blank">MedlinePlus - Autismo</a></li>
+        </ul>
+    </section>
+
+    <section id="contacto" class="fade-in">
+      <h2>Contáctanos</h2>
+      <form id="contact-form">
+        <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required />
+        <input type="email" id="email" name="email" placeholder="Tu Correo Electrónico" required />
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+        <button type="submit">Enviar Mensaje</button>
+        <div id="form-status" style="margin-top: 15px; text-align: center; font-weight: 600;"></div>
+      </form>
+    </section>
+  </main>
+  
+  <a href="#" id="back-to-top" class="back-to-top">↑</a>
+
+  <footer>
+    <p>© 2025 Página Informativa sobre el TEA. Creada con fines educativos y de concienciación.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
