@@ -42,45 +42,44 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  // ---- Funcionalidad del Formulario de Contacto ----
+  // ---- Funcionalidad del Formulario de Contacto (Versión para Formspree) ----
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
 
   contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-
-      const formData = {
-          nombre: document.getElementById('nombre').value,
-          email: document.getElementById('email').value,
-          mensaje: document.getElementById('mensaje').value
-      };
-
+      
+      const form = e.target;
+      const data = new FormData(form);
+      
       formStatus.textContent = 'Enviando...';
       formStatus.style.color = '#333';
 
-      fetch('http://localhost:3000/send-message', {
-          method: 'POST',
+      fetch(form.action, {
+          method: form.method,
+          body: data,
           headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-      })
-      .then(response => {
-          if (!response.ok) {
-              throw new Error('Network response was not ok');
+              'Accept': 'application/json'
           }
-          return response.json();
-      })
-      .then(data => {
-          console.log('Success:', data);
-          formStatus.textContent = '¡Mensaje enviado con éxito!';
-          formStatus.style.color = '#0a9396';
-          contactForm.reset();
-          setTimeout(() => { formStatus.textContent = ''; }, 5000);
-      })
-      .catch((error) => {
-          console.error('Error:', error);
-          formStatus.textContent = 'Error al enviar el mensaje. Inténtalo de nuevo.';
+      }).then(response => {
+          if (response.ok) {
+              formStatus.textContent = "¡Gracias por tu mensaje!";
+              formStatus.style.color = '#0a9396';
+              form.reset();
+              setTimeout(() => { formStatus.textContent = ''; }, 5000);
+          } else {
+              response.json().then(data => {
+                  if (Object.hasOwn(data, 'errors')) {
+                      formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
+                  } else {
+                      formStatus.textContent = "Oops! Hubo un problema al enviar tu formulario.";
+                  }
+                  formStatus.style.color = '#d9534f';
+                  setTimeout(() => { formStatus.textContent = ''; }, 5000);
+              })
+          }
+      }).catch(error => {
+          formStatus.textContent = "Oops! Hubo un problema al enviar tu formulario.";
           formStatus.style.color = '#d9534f';
           setTimeout(() => { formStatus.textContent = ''; }, 5000);
       });
